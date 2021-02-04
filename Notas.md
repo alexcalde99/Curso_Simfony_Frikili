@@ -32,3 +32,5 @@ Los formularios terminan en Type y se relacionan con una entidad
 -Definimos los campos del formulario 
 ->add('email'), 
 
+Hola
+
