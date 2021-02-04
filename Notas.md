@@ -17,3 +17,12 @@ php bin/console doctrine:schema:update --force
 
 
 #Para crear la entidad usuario nos ayudamos del comando php/bin console make:user
+
+#Para crear un nuevo controlador
+php bin/console make:controller
+
+Para ejecutar el controlador el route nos define
+@Route("/registro", name="registro")
+con /registro accederemos al controlador
+
+
