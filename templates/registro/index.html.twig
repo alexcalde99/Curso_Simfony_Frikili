@@ -11,10 +11,12 @@
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/Frikili/src/Controller/RegistroController.php'|file_link(0) }}">src/Controller/RegistroController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/Frikili/templates/registro/index.html.twig'|file_link(0) }}">templates/registro/index.html.twig</a></code></li>
-    </ul>
+    {% for message in app.flashes('exito') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {{ form(formulario) }}
 </div>
 {% endblock %}

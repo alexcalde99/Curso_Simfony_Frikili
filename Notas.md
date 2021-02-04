@@ -26,3 +26,9 @@ Para ejecutar el controlador el route nos define
 con /registro accederemos al controlador
 
 
+#Para crear un formulario php bin/console make:form
+Los formularios terminan en Type y se relacionan con una entidad
+
+-Definimos los campos del formulario 
+->add('email'), 
+
