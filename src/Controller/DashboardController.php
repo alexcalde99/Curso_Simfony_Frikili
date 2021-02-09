@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class DashboardController extends AbstractController
 {
     /**
-     * @Route("/dashboard", name="dashboard")
+     * @Route("/", name="dashboard")
      */
     public function index(PaginatorInterface $paginator, Request $request)
     {
@@ -30,5 +30,23 @@ class DashboardController extends AbstractController
             'pagination'=>$pagination
 
         ]);
+    }
+    /**
+     * @Route("/post/{id}", name="verPost")
+     */
+    public function verPost($id){
+        $em = $this->getDoctrine()->getManager();
+        $post = $em->getRepository(Posts::class)->find($id);
+        return $this->render('posts/verPost.html.twig',['post'=>$post]);
+    }
+
+    /**
+     * @Route("/mis-posts", name="MisPosts")
+     */
+    public function MisPosts(){
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->getUser();
+        $posts = $em->getRepository(Posts::class)->findBy(['user'=>$user]);
+        return $this->render('posts/MisPosts.html.twig',['posts'=>$posts]);
     }
 }
