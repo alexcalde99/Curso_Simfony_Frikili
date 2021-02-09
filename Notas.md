@@ -5,6 +5,9 @@ APP_ENV=prod en produccion
 
 La configuracion de la base de datos se define en DATABASE_URL
 
+########INICIAR EL SERVIDOR#######
+symfony server:start
+
 ##################COMANDOS BASE DE DATOS#####################
 #PARA CREAR LA BASE DE DATOS
 php bin/console doctrine:database:create
@@ -32,5 +35,4 @@ Los formularios terminan en Type y se relacionan con una entidad
 -Definimos los campos del formulario 
 ->add('email'), 
 
-Hola
 
